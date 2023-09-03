@@ -78,11 +78,8 @@ WSGI_APPLICATION = 'storefront.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'storefront',
-        'HOST': 'localhost',
-        'USER': 'root',
-        'PASSWORD': 'sir{mahdi23}'
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': 'db.sqlite3',
     }
 }
 
