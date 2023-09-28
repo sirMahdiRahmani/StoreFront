@@ -3,4 +3,8 @@ from django.http import HttpResponse
 
 
 def say_hello(request):
-    return render(request, "hello.html")
+    return HttpResponse("hello")
+
+
+def summary(request):
+    return HttpResponse(10 + 12)
