@@ -10,5 +10,10 @@
 {% else %}
     <h1>Hello world</h1>
 {% endif %}
+<ul>
+    {% for orderitem in orderitems %}
+        <li>{{ orderitem.product.title }} | {{ orderitem.order.customer.first_name }} {{ orderitem.order.customer.last_name }} | {{ orderitem.product.collection.title }}</li>
+    {% endfor %}
+</ul>
 </body>
 </html>
