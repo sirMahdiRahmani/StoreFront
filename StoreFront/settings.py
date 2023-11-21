@@ -83,7 +83,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'OPTIONS': {
             'service': "storefront",
-            'passfile': "~/.pgpass"
+            'passfile': BASE_DIR / ".pgpass"
         }
     }
 }
