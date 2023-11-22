@@ -5,10 +5,6 @@ from store.models import Product, Customer, Collection, Order, OrderItem
 
 
 def say_hello(request):
-    query_set = OrderItem.objects.filter(product__collection__id=3)
+    queryset = Product.objects.filter(id__in=OrderItem.objects.values('product_id').distinct()).order_by('title')
 
-    return render(request, 'hello.html', {'name': "Mahdi", "orderitems": list(query_set)})
-
-
-def summary(request):
-    return HttpResponse(10 + 12)
+    return render(request, 'hello.html', {'name': "Mahdi", "products": list(queryset)})
