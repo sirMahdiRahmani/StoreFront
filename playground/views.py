@@ -5,6 +5,6 @@ from store.models import Product, Customer, Collection, Order, OrderItem
 
 
 def say_hello(request):
-    queryset = Product.objects.filter(id__in=OrderItem.objects.values('product_id').distinct()).order_by('title')
+    queryset = Order.objects.select_related('customer').prefetch_related('orderitem_set').order_by('-placed_at')[:5]
 
-    return render(request, 'hello.html', {'name': "Mahdi", "products": list(queryset)})
+    return render(request, 'hello.html', {'name': "Mahdi", "orders": list(queryset)})
