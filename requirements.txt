@@ -1,6 +1,5 @@
 django==4.2.7
 psycopg
-psycopg2
 psycopg_binary
 psycopg2_binary
 django_debug_toolbar
