@@ -2,16 +2,23 @@ version: '3'
 
 services:
   postgres-db:
-    build:
-      context: .
-      dockerfile: Dockerfile  # Specify the path to your Dockerfile
-    container_name: postgres-db
+    image: postgres
+    container_name: db
     restart: always
     ports:
       - "5432:5432"
     environment:
       POSTGRES_PASSWORD: "sir{mahdi23}"
       POSTGRES_USER: "sirmahdi"
-      PGSERVICE_FILE: ./.pg_service.conf
+      PGSERVICEFILE: ./.pg_service.conf
     volumes:
       - /home/sirmahdi/Database/postgres/:/var/lib/postgresql/data
+
+  django-portal:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    container_name: app
+    restart: unless-stopped
+    ports:
+      - "5000:5000"
