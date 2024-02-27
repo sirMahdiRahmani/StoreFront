@@ -1,12 +1,12 @@
-from django.shortcuts import render
-from django.db import transaction
-from django.db.models import Value, F, Func, Count, Max, Min, Sum, ExpressionWrapper, DecimalField
-from django.db.models.functions import Concat
-from store.models import Product, Customer, Collection, Order, OrderItem, Cart, CartItem
+from rest_framework.decorators import api_view
+from rest_framework.response import Response
 
 
-def say_hello(request):
-    queryset = Product.objects.annotate(
-        discounted_price=ExpressionWrapper(F('unit_price') * 0.8, output_field=DecimalField()))
+@api_view()
+def product_list(request):
+    return Response('Hello World!')
 
-    return render(request, 'hello.html', {'name': "Mahdi", "data": list(queryset)})
+
+@api_view()
+def product_detail(request, id):
+    return Response(id)
