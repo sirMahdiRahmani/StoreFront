@@ -1,13 +1,7 @@
-FROM python:3.10
+FROM postgres
 
-COPY requirements.txt requirements.txt
-RUN pip install --no-cache-dir -r requirements.txt
+COPY ./.pg_service.conf /configs
 
-COPY . code
-WORKDIR /code
+RUN export PGSERVICE_FILE=/configs/.pg_service.conf
 
-EXPOSE 8000
-
-# runs the production server
-ENTRYPOINT ["python3", "manage.py"]
-CMD ["runserver", "0.0.0.0:8000"]
+CMD ["systemctl", "restart", "postgres"]
