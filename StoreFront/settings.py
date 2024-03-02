@@ -89,9 +89,13 @@ DATABASES = {
 }
 
 INTERNAL_IPS = [
-    "127.0.0.1",
+    '127.0.0.1',
 ]
 
+ALLOWED_HOSTS = [
+    'localhost',
+    '0.0.0.0'
+]
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
 
