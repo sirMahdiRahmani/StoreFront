@@ -5,7 +5,7 @@ admin.site.site_header = 'Store Front Admin'
 admin.site.site_index = 'Admin'
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('my-admin-panel/', admin.site.urls),
     path("__debug__/", include("debug_toolbar.urls")),
     path('store/', include('store.urls')),
 ]

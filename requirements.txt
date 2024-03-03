@@ -5,4 +5,5 @@ psycopg_binary~=3.1.18
 psycopg2_binary~=2.9.9
 django_debug_toolbar~=4.3.0
 drf-nested-routers~=0.93.5
+django-filter~=23.5
 tzdata
