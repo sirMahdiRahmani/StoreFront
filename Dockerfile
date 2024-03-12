@@ -15,6 +15,7 @@ COPY ./store /StoreFront/store
 COPY ./playground /StoreFront/playground
 COPY ./likes /StoreFront/likes
 COPY ./tags /StoreFront/tags
+COPY ./core /StoreFront/core
 COPY ./manage.py /StoreFront/manage.py
 COPY ./.pgpass /StoreFront/.pgpass
 COPY ./.pg_service.conf /StoreFront/.pg_service.conf
