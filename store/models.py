@@ -93,6 +93,9 @@ class Order(models.Model):
         return 'order ' + str(self.id) + " " + self.payment_status
 
     class Meta:
+        permissions = [
+            ('cancel_order', 'Can cancel order')
+        ]
         ordering = ['-placed_at']
 
 
